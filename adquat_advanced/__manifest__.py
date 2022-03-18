@@ -15,7 +15,7 @@
 """,
     'author': 'Adquat-solutions',
     'website': 'http://www.adquat.com',
-    'depends': ['base','product','stock','sale','sale_project'],
+    'depends': ['base'],
     'data': [],
     'demo': [],
     'update_xml': [

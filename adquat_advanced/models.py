@@ -20,6 +20,6 @@ class ServerAction(models.Model):
 
         return eval_context
 
-    def run(self):
-        import requests
-        return super(ServerAction, self).run()
+    # def run(self):
+    #     import requests
+    #     return super(ServerAction, self).run()
