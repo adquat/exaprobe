@@ -19,3 +19,7 @@ class ServerAction(models.Model):
             eval_context['requests'] = requests
 
         return eval_context
+
+    def run(self):
+        import requests
+        return super(ServerAction, self).run()
