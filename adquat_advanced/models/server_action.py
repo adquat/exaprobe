@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from werkzeug import urls
-
 from odoo import api, fields, models
-import requests
+from odoo.tools.safe_eval import wrap_module
+
+requests = wrap_module(__import__('requests'), ['get', 'post'])
 
 class ServerAction(models.Model):
     """ Add website option in server actions. """
@@ -19,7 +18,3 @@ class ServerAction(models.Model):
             eval_context['requests'] = requests
 
         return eval_context
-
-    # def run(self):
-    #     import requests
-    #     return super(ServerAction, self).run()

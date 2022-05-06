@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- NO UPDATE POSSIBLE -->
+        <record id="crm_lead_form_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.form.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <!-- v15 -->
+                <xpath expr="//form[1]/header/button[1]" position="attributes">
+                    <attribute name="string">Mark Won</attribute>
+                    <attribute name="data-hotkey"></attribute>
+                    <attribute name="title"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/header/button[2]" position="attributes">
+                    <attribute name="string">Mark Lost</attribute>
+                    <attribute name="data-hotkey"></attribute>
+                    <attribute name="title"></attribute>
+                    <attribute name="class">oe_highlight</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/header/button[3]" position="attributes">
+                    <attribute name="data-hotkey"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/header/button[4]" position="attributes">
+                    <attribute name="data-hotkey"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/header/button[5]" position="attributes">
+                    <attribute name="string">Mark as Lost</attribute>
+                    <attribute name="data-hotkey"></attribute>
+                    <attribute name="title"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_schedule_meeting']" position="attributes">
+                    <attribute name="context">{'partner_id': partner_id, 'search_default_opportunity_id': id}</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_show_potential_duplicates']" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_schedule_meeting']/div/field" position="attributes">
+                    <attribute name="name">meeting_count</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_schedule_meeting']/div/span[1]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('calendar_event_count', '&gt;', 1)]}</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_schedule_meeting']/div/span[2]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('calendar_event_count', '&lt;', 2)]}</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_schedule_meeting']/div/span[1]" position="inside">
+                    Meeting
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_button_box']/button[@name='action_schedule_meeting']/div/span[2]" position="inside">
+                    Meetings
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/label[1]" position="attributes">
+                    <attribute name="class">oe_edit_only</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/label[2]" position="attributes">
+                    <attribute name="class">oe_edit_only</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h1/field" position="attributes">
+                    <attribute name="class"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2" position="attributes">
+                    <attribute name="class">o_row row no-gutters d-flex</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[1]/div/span[2]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[1]/div/span[1]" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[1]/div/field[2]" position="after">
+                    <span class="oe_grey p-2"> at </span>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2[1]/div[4]/div[2]/field[@name='is_automated_probability']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[4]/div[2]" position="before">
+                    <span class="oe_edit_only o_pls_probability">
+                        <label for="probability"/>
+                    </span>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[4]/div[1]" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[3]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/div[@class='oe_title']/h2/div[2]" position="replace"/>
+
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]" position="attributes">
+                    <attribute name="name"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='partner_id']" position="attributes">
+                    <attribute name="context">{'default_name': contact_name, 'default_street': street, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_function': function, 'default_phone': phone, 'default_mobile': mobile, 'default_email': email_from, 'default_user_id': user_id, 'default_team_id': team_id, 'default_website': website, 'show_vat': True}</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]" position="attributes">
+                    <attribute name="name"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='phone_blacklisted']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='mobile_blacklisted']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='partner_email_update']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='partner_phone_update']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[1]/button" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[1]/span" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[1]/field[@name='email_from']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('partner_address_email', '!=', False)]}</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[1]/field[@name='email_from']" position="before">
+                    <i class="fa fa-ban" style="color: red;" role="img" title="This email is blacklisted for mass mailing" aria-label="Blacklisted" attrs="{'invisible': ['|', ('is_blacklisted', '=', False), ('partner_address_email', '!=', False)]}" groups="base.group_user"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[1]/field[@name='email_from']" position="after">
+                    <i class="fa fa-ban" style="color: red;" role="img" title="This email is blacklisted for mass mailing" aria-label="Blacklisted" attrs="{'invisible': ['|', ('partner_is_blacklisted', '=', False), ('partner_address_email', '=', False)]}" groups="base.group_user"/>
+                    <field name="partner_address_email" attrs="{'invisible': [('partner_address_email', '==', False)]}" widget="email" string="Email"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[1]" position="after">
+                    <field string="Phone" name="partner_address_phone" widget="phone" options="{'enable_sms': True}" readonly="1" attrs="{'invisible': [('partner_address_phone', '==', False)]}"/>
+                    <field name="phone" widget="phone" options="{'enable_sms': True}" attrs="{'invisible':    [('partner_address_phone', '!=', False)]}"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[@for='phone']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[2]" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]" position="attributes">
+                    <attribute name="name"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/field[@name='phone_blacklisted']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/field[@name='partner_email_update']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/field[@name='partner_phone_update']" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[2]/button" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[2]/span" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[2]/field[@name='email_from']" position="before">
+                    <i class="fa fa-ban" style="color: red;" role="img" title="This email is blacklisted for mass mailing" aria-label="Blacklisted" attrs="{'invisible': [('is_blacklisted', '=', False)]}" groups="base.group_user"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[4]/field[@name='mobile']" position="attributes">
+                    <attribute name="string"></attribute>
+                    <attribute name="options">{'enable_sms': True}</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/field[@name='function']" position="after">
+                    <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[4]/field[@name='mobile']" position="move" />
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[3]/field[@name='phone']" position="attributes">
+                    <attribute name="id"></attribute>
+                    <attribute name="options">{'enable_sms': True}</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/field[@name='function']" position="after">
+                    <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[3]/field[@name='phone']" position="move" />
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/label[4]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[4]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/label[3]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[3]/div[3]" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[5]/field[@name='user_id']" position="attributes">
+                    <attribute name="context">{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'sales_team.group_sale_salesman_all_leads'], 'team_id': team_id}</attribute>
+                    <attribute name="domain">[('share', '=', False)]</attribute>
+                    <attribute name="widget"></attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[5]/field[@name='team_id']" position="attributes">
+                    <attribute name="options"></attribute>
+                    <attribute name="domain">['|', ('company_id', '=', False), ('company_id', '=', company_id)]</attribute>
+                    <attribute name="widget">selection</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[7]" position="attributes">
+                    <attribute name="name"></attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[7]/field[@name='user_company_ids']" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]" position="attributes">
+                    <attribute name="name"></attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[3]/field[@name='date_closed']" position="after">
+                    <field name="probability"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']" position="attributes">
+                    <attribute name="string">Follow-up</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[1]/field[@name='lang_id']" position="attributes">
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[2]/div[2]/field[@name='mobile']" position="attributes">
+                    <attribute name="id"></attribute>
+                    <attribute name="options">{'enable_sms': True}</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[2]/field[@name='function']" position="after">
+                    <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[2]/div[2]/field[@name='mobile']" position="move" />
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[2]/label[2]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[2]/div[2]" position="replace"/>
+
+                <xpath expr="//form[1]/div[1]/field[@name='message_follower_ids']" position="attributes">
+                    <attribute name="widget">mail_followers</attribute>
+                </xpath>
+                <xpath expr="//form[1]/div[1]/field[@name='activity_ids']" position="attributes">
+                    <attribute name="widget">mail_activity</attribute>
+                </xpath>
+                <xpath expr="//form[1]/div[1]/field[@name='message_ids']" position="attributes">
+                    <attribute name="widget">mail_thread</attribute>
+                </xpath>
+
+                <!-- v13 actualisé pour la v15-->
+                <xpath expr="//form[1]/header/button[2]" position="attributes">
+                    <attribute name="name">159</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/header/button[3]" position="attributes">
+                    <attribute name="name">160</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/header/field[@name='stage_id']" position="before">
+                    <button name="229" type="action" string="Enrichir l'opportunité à partir du TDP" class="btn-primary" attrs="{'invisible': ['|',('x_tdp_file', '=', False),('x_tdp_status', '!=', 'OK')]}"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/div[@name='button_box']" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='lang_id']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='website']" position="after">
+                    <field name="x_numero_opportunite" readonly="1"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='partner_id']" position="after">
+                    <field name="x_numero_client" readonly="1"/>
+                    <field name="x_numero_opportunite" readonly="1"/>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[@for='email_from']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[@class='o_row o_row_readonly']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='partner_address_phone']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='phone']" position="replace"/>
+
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[4]/field[@name='tag_ids']" position="after">
+                    <field name="x_fournisseurs" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[5]/field[@name='type']" position="after">
+                    <field name="x_sale_specialist" domain="[('share', '=', False)]"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[6]/field[@name='tag_ids']" position="after">
+                    <field name="x_fournisseurs" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                    <field name="campaign_id"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[6]" position="after">
+                    <group attrs="{'invisible': [('type', '=', 'lead')]}">
+                        <label for="x_margin_rate"/>
+                        <div class="o_row">
+                            <field name="x_margin_rate" widget="float"/>
+                            <t> %</t>
+                        </div>
+                        <field name="x_margin" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                        <field filename="x_tdp_filename" name="x_tdp_file" string="Fichier TDP" widget="binary" invisible="0"/>
+                        <field invisible="1" name="x_tdp_filename" string="Nom du fichier TDP"/>
+                        <field invisible="1" name="x_tdp_status"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[@name='categorization']" position="attributes">
+                    <attribute name="groups">base.group_multi_company</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[@name='categorization']/field[@name='company_id']" position="attributes">
+                    <attribute name="groups"></attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']" position="attributes">
+                    <attribute name="string">Détails</attribute>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[@name='Misc']/field[@name='day_open']" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]/group[@name='Misc']/field[@name='day_close']" position="replace"/>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']" position="after">
+                    <page string="UGAP">
+                        <group string="Détails UGAP">
+                            <field name="x_achats_UGAP" widget="monetary"/>
+                            <field name="x_UGAP_install"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[not(@name)][7]" position="replace"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                    <page name="TDP" string="TDP">
+                        <div class="alert alert-warning" role="alert" attrs="{'invisible': [('x_tdp_file', '!=', False)]}">
+                            <strong>TDP absent</strong><br/>
+                            Fournir le TDP correspondant à l'opportunité.<br/><br/>
+                            <field filename="x_tdp_filename" name="x_tdp_file" string="Fichier TDP" widget="binary"/>
+                            <field invisible="1" name="x_tdp_filename" string="Nom du fichier TDP"/>
+                        </div>
+                        <group name="studio_group_TDP_left1" class="alert alert-success" role="alert" attrs="{'invisible': ['|',('x_tdp_file', '=', False),('x_tdp_status', '!=', 'OK')]}">
+                            <group name="tdp">
+                                <field name="x_tdp_import_date" readonly="1"/>
+                                <field name="x_tdp_status" readonly="1"/>
+                                <field name="x_tdp_version_tdp" readonly="1"/>
+                            </group>
+                            <group name="tdp2">
+                                <button name="229" type="action" string="Enrichir l'opportunité à partir du TDP" class="btn-primary"/>
+                            </group>
+                        </group>
+                        <group name="studio_group_TDP_left1" class="alert alert-danger" role="alert" attrs="{'invisible': ['|',('x_tdp_file', '=', False),('x_tdp_status', '=', 'OK')]}">
+                            <group name="tdp">
+                                <field name="x_tdp_import_date" readonly="1"/>
+                                <field name="x_tdp_status" readonly="1"/>
+                                <field name="x_tdp_version_tdp" readonly="1"/>
+                            </group>
+                            <group name="tdp2">
+
+                            </group>
+                        </group>
+                        <group name="studio_group_TDP" string="Informations extraites du TDP"    attrs="{'invisible': ['|',('x_tdp_file', '=', False),('x_tdp_status', '!=', 'OK')]}">
+                            <group name="studio_group_TDP_left" >
+                                <field name="x_tdp_ic_trig" readonly="1"/>
+                                <field name="x_tdp_nom_client" readonly="1"/>
+                                <field name="x_tdp_numero_client" readonly="1"/>
+                                <field name="x_tdp_nom_projet" readonly="1"/>
+                                <field name="x_tdp_bu" readonly="1"/>
+                                <field name="x_tdp_version" readonly="1"/>
+                                <field name="x_tdp_ca" readonly="1" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_tdp_marge" readonly="1" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_tdp_achats" readonly="1" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_tdp_ca_servinteg" readonly="1" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_tdp_nb_jours" readonly="1"/>
+                                <field name="x_tdp_nb_jours_CDP" readonly="1"/>
+                                <field name="x_tdp_nb_jours_CT" readonly="1"/>
+                                <field name="x_tdp_hno" readonly="1"/>
+                                <field name="x_tdp_pack_exa" readonly="1"/>
+                                <field name="x_tdp_pack_exa_247" readonly="1"/>
+                                <field name="x_tdp_pack_exa_gtr" readonly="1"/>
+                                <field name="x_tdp_servmng" readonly="1"/>
+                                <field name="x_tdp_BDJ" readonly="1"/>
+                                <field name="x_tdp_TAM_SDM" readonly="1"/>
+                                <field name="x_tdp_reassurance" readonly="1"/>
+                                <field name="x_tdp_ca_renew" readonly="1"/>
+                                <field name="x_tdp_duree" readonly="1"/>
+                                <field name="x_tdp_partenaires" readonly="1"/>
+                                <field name="x_tdp_caff_lie" readonly="1"/>
+                                <field name="x_tdp_lien_srv_avv" readonly="1"/>
+                                <field name="x_tdp_notes" readonly="1"/>
+                            </group>
+
+                        </group>
+                    </page>
+
+
+                    <page name="ADV" string="Commande">
+
+                        <div attrs="{'invisible': [('x_adv_etat_commande', '!=', False),('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                            <!-- A CORRIGER CAR ID -->
+                            <button name="225" type="action" style="margin-right:20px;" string="1-Préremplir à partir du TDP" class="btn-primary"/>
+                            <button name="226" type="action" style="margin-right:20px;" string="2-Vérifier" class="btn-primary" />
+                            <button name="224" type="action" style="margin-right:20px;" string="3-Envoyer la commande" class="btn-primary" confirm="Cette action va transformer l'opportunité en commande et la transmettre au service ADV pour traitement.
+                                Etes-vous sûr de vouloir continuer ?"/>
+                        </div>
+
+
+                        <div attrs="{'invisible': ['|',('x_adv_etat_commande', '=', False),('x_adv_etat_commande', '=', 'Erreur, non transmis')]}" >
+                            <group name="studio_group_info_commande" string="Information sur la commande transmise"    >
+                                <field name="x_adv_etat_commande" readonly="1"/>
+                                <field name="x_adv_code_affaire" readonly="1" invisible="0"/>
+                                <field name="x_adv_code_affaire_2" readonly="1" attrs="{'invisible': ['|',('x_adv_code_affaire_2', '=', False),('x_adv_code_affaire_2', '=', '')]}"/>
+                                <field name="x_adv_tache_wrike" readonly="1"/>
+                                <field name="x_adv_lien_wrike" widget="url" readonly="1"/>
+                                <field name="x_adv_nom" readonly="1" invisible="1"/>
+                                <field name="x_adv_commentaire_adv" readonly="1" invisible="1"/>
+                                <field name="x_adv_cdp" readonly="1" invisible="0"/>
+                            </group>
+                            <div>
+                                <button name="223" type="action" string="Actualiser" class="btn-primary"/>
+                            </div>
+                            <br/>
+                        </div>
+
+
+                        <div attrs="{'invisible': ['|',('x_adv_etat_commande', '=', False),('x_adv_etat_commande', '=', 'Erreur, non transmis')]}" >
+                            <group name="studio_group_renouvellement" string="Renouvellement à venir" >
+                                <field name="x_renew_duree" invisible="0"/>
+                                <field name="x_renew_montant" invisible="0" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_renew_opp" attrs="{'invisible': [('x_renew_opp', '=', False)]}"/>
+                            </group>
+                            <div >
+                                            <button name="246" type="action" string="Créer le renouvellement à venir" class="btn-primary"    attrs="{'invisible': [('x_renew_opp', '!=', False)]}"/>
+                            </div>
+                        </div>
+
+                        <div>
+                            <br/>
+                        </div>
+
+                        <div class="alert alert-danger" role="alert" attrs="{'invisible': [('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                            <strong>ERREUR</strong><br/>
+                            Une erreur est survenue lors de la transmission.
+                        </div>
+
+                        <div attrs="{'invisible': [('x_adv_etat_commande', '!=', False),('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                        <div class="alert alert-warning" role="alert" attrs="{'invisible': [('x_adv_verif', '!=', False)]}">
+                            <strong>Vérification de la commande</strong><br/>
+                            <field name="x_adv_verif" readonly="1" invisible="1"/>
+                            Non effectuée.
+                        </div>
+                        <div class="alert alert-success" role="alert" attrs="{'invisible': [('x_adv_verif', '!=', 'OK')]}">
+                            <strong>Vérification de la commande</strong><br/>
+                            <field name="x_adv_verif" readonly="1" invisible="1"/>
+                            <field name="x_adv_verif_details" readonly="1"/>
+                        </div>
+                        <div class="alert alert-danger" role="alert" attrs="{'invisible': ['|',('x_adv_verif', '=', False),('x_adv_verif', '=', 'OK')]}">
+                            <strong>Vérification de la commande</strong><br/>
+                            <field name="x_adv_verif" readonly="1" invisible="1"/>
+                            <field name="x_adv_verif_details" readonly="1"/>
+                        </div>
+                        </div>
+
+
+
+                        <group name="studio_group_commande3" attrs="{'invisible': [('x_adv_etat_commande', '!=', False),('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                            <group name="studio_group_infos1" string="Informations obligatoires">
+                                <field name="x_adv_ic_trig"/>
+                                <field name="x_adv_ic"/>
+                                <field name="x_adv_equipe"/>
+                                <field name="x_adv_nom_client"/>
+                                <field name="x_adv_nom_projet"/>
+                                <field name="x_adv_bu"/>
+                                <field name="x_adv_ca" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_adv_achats" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_adv_ca_servinteg" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_adv_nb_jours"/>
+                                <field name="x_adv_nb_jours_CDP"/>
+                                <field name="x_adv_nb_jours_CT"/>
+                                <field name="x_adv_hno"/>
+                                <field name="x_adv_pack_exa"/>
+                                <field name="x_adv_pack_exa_247" attrs="{'invisible': [('x_adv_pack_exa', '!=', True)]}"/>
+                                <field name="x_adv_pack_exa_gtr" attrs="{'invisible': [('x_adv_pack_exa', '!=', True)]}"/>
+                                <field name="x_adv_pack_exa_date" attrs="{'invisible': [('x_adv_pack_exa', '!=', True)]}"/>
+                                <field name="x_adv_pack_exa_date_specifique" attrs="{'invisible': ['|',('x_adv_pack_exa', '!=', True), ('x_adv_pack_exa_date', '!=', 'Date ferme')]}"/>
+                                <field name="x_adv_servmng"/>
+                                <field name="x_adv_BDJ"/>
+                                <field name="x_adv_TAM_SDM"/>
+                                <field name="x_adv_reassurance"/>
+                                <field name="x_adv_lien_srv_avv"/>
+                            </group>
+
+                            <group name="studio_group_infos2" string="Informations complémentaires">
+                                <field name="x_adv_nouveau_client"/>
+                                <field filename="x_adv_fiche_client_filename" name="x_adv_fiche_client_file" widget="binary" attrs="{'invisible': [('x_adv_nouveau_client', '!=', True)]}"/>
+                                <field invisible="1" name="x_adv_fiche_client_filename"/>
+                                <field filename="x_adv_nouv_client_kbis_filename" name="x_adv_nouv_client_kbis_file" widget="binary" attrs="{'invisible': [('x_adv_nouveau_client', '!=', True)]}"/>
+                                <field invisible="1" name="x_adv_nouv_client_rib_filename"/>
+                                <field filename="x_adv_nouv_client_rib_filename" name="x_adv_nouv_client_rib_file" widget="binary" attrs="{'invisible': [('x_adv_nouveau_client', '!=', True)]}"/>
+                                <field invisible="1" name="x_adv_nouv_client_rib_filename"/>
+                                <field name="x_adv_nouveau_fournisseur"/>
+                                <field filename="x_adv_fiche_nouveau_fournisseur_filename" name="x_adv_fiche_nouveau_fournisseur_file" widget="binary" attrs="{'invisible': [('x_adv_nouveau_fournisseur', '!=', True)]}"/>
+                                <field invisible="1" name="x_adv_fiche_nouveau_fournisseur_filename"/>
+                                <field name="x_adv_date_demarrage"/>
+                                <field name="x_adv_date_validite_conditions"/>
+                                <field name="x_adv_cisco_smartaccount"/>
+                                <field name="x_adv_caff_lie"/>
+                                <field name="x_adv_marge" string="Marge théorique HT" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="x_adv_partenaires"/>
+                                <field name="x_adv_remarques"/>
+                            </group>
+
+                        </group>
+
+                        <group name="studio_group_commande1" attrs="{'invisible': [('x_adv_etat_commande', '!=', False),('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                            <group name="studio_group_doc_oblig" string="Documents obligatoires" >
+                                <field filename="x_tdp_filename" name="x_tdp_file" string="Fichier TDP" widget="binary"/>
+                                <field filename="x_adv_offre_commerciale_filename" name="x_adv_offre_commerciale_file" widget="binary"/>
+                                <field invisible="1" name="x_adv_offre_commerciale_filename"/>
+
+                                <field filename="x_adv_commande_filename" name="x_adv_commande_file" string="Commande client" widget="binary"/>
+                                <field invisible="1" name="x_adv_commande_filename"/>
+                                <field filename="x_adv_commande2_filename" name="x_adv_commande2_file" string="Commande client 2" widget="binary" attrs="{'invisible': [('x_adv_commande_file','=',False),('x_adv_commande2_file','=',False)]}"/>
+                                <field invisible="1" name="x_adv_commande2_filename"/>
+                                <field filename="x_adv_commande3_filename" name="x_adv_commande3_file" string="Commande client 3" widget="binary" attrs="{'invisible': [('x_adv_commande2_file','=',False),('x_adv_commande3_file','=',False)]}"/>
+                                <field invisible="1" name="x_adv_commande3_filename"/>
+
+
+                                <field filename="x_adv_achat_filename" name="x_adv_achat_file" string="Devis achats" widget="binary"/>
+                                <field invisible="1" name="x_adv_achat_filename"/>
+                                <field filename="x_adv_achat_filename2" name="x_adv_achat_file2" string="Devis achats 2" widget="binary" attrs="{'invisible': [('x_adv_achat_file','=',False),('x_adv_achat_file2','=',False)]}"/>
+                                <field invisible="1" name="x_adv_achat_filename2"/>
+                                <field filename="x_adv_achat_filename3" name="x_adv_achat_file3" string="Devis achats 3" widget="binary" attrs="{'invisible': [('x_adv_achat_file2','=',False),('x_adv_achat_file3','=',False)]}"/>
+                                <field invisible="1" name="x_adv_achat_filename3"/>
+                                <field filename="x_adv_achat_filename4" name="x_adv_achat_file4" string="Devis achats 4" widget="binary" attrs="{'invisible': [('x_adv_achat_file3','=',False),('x_adv_achat_file4','=',False)]}"/>
+                                <field invisible="1" name="x_adv_achat_filename4"/>
+                                <field filename="x_adv_achat_filename5" name="x_adv_achat_file5" string="Devis achats 5" widget="binary" attrs="{'invisible': [('x_adv_achat_file4','=',False),('x_adv_achat_file5','=',False)]}"/>
+                                <field invisible="1" name="x_adv_achat_filename5"/>
+                            </group>
+
+                            <group name="studio_group_commande3_right" string="Documents complémentaires" attrs="{'invisible': [('x_adv_etat_commande', '!=', False),('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                                <field filename="x_adv_fiche_livraison_filename" name="x_adv_fiche_livraison_file" widget="binary"/>
+                                <field invisible="1" name="x_adv_fiche_livraison_filename"/>
+                                <field filename="x_adv_fichier1_filename" name="x_adv_fichier1_file"    widget="binary"/>
+                                <field invisible="1" name="x_adv_fichier1_filename"/>
+                                <field filename="x_adv_fichier2_filename" name="x_adv_fichier2_file" widget="binary" attrs="{'invisible': [('x_adv_fichier1_file','=',False),('x_adv_fichier2_file','=',False)]}"/>
+                                <field invisible="1" name="x_adv_fichier2_filename"/>
+                                <field filename="x_adv_fichier3_filename" name="x_adv_fichier3_file" widget="binary" attrs="{'invisible': [('x_adv_fichier2_file','=',False),('x_adv_fichier3_file','=',False)]}"/>
+                                <field invisible="1" name="x_adv_fichier3_filename"/>
+                            </group>
+                        </group>
+
+                        <group name="studio_group_commande3" attrs="{'invisible': [('x_adv_etat_commande', '!=', False),('x_adv_etat_commande', '!=', 'Erreur, non transmis')]}">
+                            <group name="studio_group_derog" string="Dérogations">
+                                <field name="x_adv_derogation_politique_achat" string="Politique achat"/>
+                                <field name="x_adv_derogation_marge" string="Marge"/>
+                                <field name="x_adv_derogation_anticipation" string="Commande anticipée"/>
+                                <field name="x_adv_derogation_crea_fournisseur" string="Création nouveau fournisseur"/>
+                            </group>
+
+                            <group name="studio_group_derog_justif" string="Justification des dérogations" attrs="{'invisible': [('x_adv_derogation_politique_achat','=',False),('x_adv_derogation_marge','=',False),('x_adv_derogation_anticipation','=',False),('x_adv_derogation_crea_fournisseur','=',False)]}">
+                                <field filename="x_adv_justificatif_filename" name="x_adv_justificatif_file" string="Justificatif 1" widget="binary" />
+                                <field invisible="1" name="x_adv_justificatif_filename"/>
+                                <field filename="x_adv_justificatif2_filename" name="x_adv_justificatif2_file" string="Justificatif 2" widget="binary" attrs="{'invisible': [('x_adv_justificatif_file','=',False),('x_adv_justificatif2_file','=',False)]}"/>
+                                <field invisible="1" name="x_adv_justificatif2_filename"/>
+                                <field filename="x_adv_justificatif3_filename" name="x_adv_justificatif3_file" string="Justificatif 3" widget="binary" attrs="{'invisible': [('x_adv_justificatif2_file','=',False),('x_adv_justificatif3_file','=',False)]}"/>
+                                <field invisible="1" name="x_adv_justificatif3_filename"/>
+                            </group>
+                        </group>
+
+                        <group groups="sales_team.group_sale_manager">
+                            <group string="Manager">
+                                <field name="x_adv_force_commande" string="Outrepasser les vérifications" widget="toggle_button"/>
+                                <field name="x_adv_etat_commande"/>
+                            </group>
+                        </group>
+
+                    </page>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Client final</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='x_numero_client']" position="after">
+                    <field name="x_sous_traitant_id"/>
+                </xpath>
+
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='lead']/group[1]" position="after">
+                    <group name="Addon">
+                        <group name="Renouvellement" string="Renouvellement">
+                            <field name="x_renew_caff" string="Code affaire renouvelé"/>
+                            <field name="x_renewed_opp"/>
+                        </group>
+                        <group name="Renouvellement2">
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_lead_kanban_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.kanban.lead.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <!-- v15 -->
+                <xpath expr="//kanban/field[@name='probability']" position="replace"/>
+
+                <xpath expr="//kanban/field[@name='user_id']" position="after">
+                    <field name="x_partner_address_email"/>
+                    <field name="message_needaction_counter"/>
+                </xpath>
+
+                <xpath expr="//kanban/templates/t/t" position="replace"/>
+
+                <xpath expr="//kanban/templates/t/div" position="attributes">
+                    <attribute name="t-attf-class">#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click</attribute>
+                </xpath>
+
+                <xpath expr="//kanban/templates/t/div/div[3]/div[4]" position="after">
+                    <div class="text-muted o_kanban_record_subtitle">
+                        <t t-if="record.expected_revenue.raw_value">
+                            <field name="expected_revenue" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                            <span class="pull-right" t-if="record.x_margin.raw_value" >
+                            <field name="x_margin" widget="monetary" options="{'currency_field': 'company_currency'}"/></span>
+                        </t>
+                    </div>
+                </xpath>
+
+                <xpath expr="//kanban/templates/t/div/div[3]/div[3]" position="replace"/>
+                <xpath expr="//kanban/templates/t/div/div[3]/div[2]" position="replace"/>
+                <xpath expr="//kanban/templates/t/div/div[4]/div/div[1]/field[@name='priority']" position="after">
+                    <t t-if="record.message_needaction_counter.raw_value">
+                        <span role="alert" class='oe_kanban_mail_new' title='Unread Messages'>
+                            <i class='fa fa-comments' aria-label="Unread messages" role="img"/>
+                            <t t-raw="record.message_needaction_counter.raw_value"/>
+                        </span>
+                    </t>
+                </xpath>
+                <xpath expr="//kanban/templates/t/div/div[1]" position="replace"/>
+
+                <!-- v13 actualisé pour la v15-->
+                <xpath expr="//kanban[1]/field[@name='activity_ids']" position="after">
+                    <field name="date_deadline"/>
+                </xpath>
+
+                <xpath expr="//kanban[@default_group_by='stage_id']" position="attributes">
+                    <attribute name="on_create"></attribute>
+                    <attribute name="quick_create_view"></attribute>
+                    <attribute name="sample"></attribute>
+                    <attribute name="default_order">date_deadline</attribute>
+                </xpath>
+
+                <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[@class='oe_kanban_content flex-grow-1']/div[1]" position="before">
+                    <div>
+                      <field name="partner_id"/>
+                      <span class="pull-right" t-if="record.date_deadline.value"><field name="date_deadline"/></span>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_lead_search_lead_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.search.lead.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/filter[@name='unassigned_leads']" position="after">
+                    <separator/>
+                    <filter string="Piste" name="lead" domain="['|',('type', '=', 'lead'),('type', '=', False)]"/>
+                    <filter string="Opportunité" name="opportunity" domain="[('type', '=', 'opportunity')]"/>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='lost']" position="after">
+                    <separator/>
+                    <xpath expr="//search/filter[@name='inactive']" position="move" />
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='saleschannel']" position="after">
+                    <xpath expr="//search/group/filter[@name='salesperson']" position="move" />
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='saleschannel']" position="before">
+                    <xpath expr="//search/group/filter[@name='compaign']" position="move" />
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='salesperson']" position="after">
+                    <filter string="Stage" name="stage" context="{'group_by':'stage_id'}"/>
+                    <filter string="Piste/Opportunité" name="type" context="{'group_by':'type'}"/>
+                </xpath>
+
+                <xpath expr="//search/separator[6]" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='city']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='country']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='company']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='medium']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='source']" position="replace" />
+            </field>
+        </record>
+        <record id="crm_lead_search_opportunity_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.search.opportunity.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='name']" position="attributes">
+                    <attribute name="filter_domain">['|', '|', '|', '|', '|','|','|',
+                      ('partner_id', 'ilike', self),
+                      ('partner_name', 'ilike', self),
+                      ('email_from', 'ilike', self),
+                      ('name', 'ilike', self),
+                      ('contact_name', 'ilike', self),
+                      ('x_numero_opportunite', 'ilike', self),
+                      ('x_numero_client', 'ilike', self),
+                      ('x_adv_code_affaire', 'ilike', self)
+                      ]
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//search/field[@name='partner_id']" position="attributes">
+                    <attribute name="filter_domain">['|', '|', '|','|',
+                        ('partner_id', 'ilike', self),
+                        ('partner_name', 'ilike', self),
+                        ('email_from', 'ilike', self),
+                        ('contact_name', 'ilike', self),
+                        ('x_numero_client', 'ilike', self)
+                        ]
+                    </attribute>
+                </xpath>
+
+                <xpath expr="//search/field[@name='partner_id']" position="after">
+                    <field invisible="1" name="x_numero_opportunite"/>
+                    <field invisible="1" name="x_numero_client"/>
+                </xpath>
+
+                <xpath expr="//search/field[@name='team_id']" position="after">
+                    <field name="x_sale_specialist"/>
+                </xpath>
+
+                <xpath expr="//search/field[@name='stage_id']" position="after">
+                    <field name="x_fournisseurs" string="Fournisseurs" filter_domain="[('x_fournisseurs', 'ilike', self)]"/>
+                    <field name="x_renew_caff" string="Code affaire renouvelé" filter_domain="['|',['x_tdp_caff_lie','ilike',self],['x_renew_caff','ilike',self]]"/>
+                </xpath>
+
+                <xpath expr="//search/field[@name='country_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/field[@name='city']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='open_opportunities']" position="before">
+                    <separator/>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='open_opportunities']" position="after">
+                    <separator/>
+                    <filter string="Actualité avant-vente" name="avant-vente" domain="[('tag_ids','ilike','actualité avant-vente')]"/>
+                    <separator/>
+                    <filter string="New" name="new" domain="[('tag_ids','not ilike','renew')]"/>
+                    <filter string="Renew" name="renew" domain="[('tag_ids','ilike','renew')]"/>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='message_needaction']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='creation_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='close_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='close_date']" position="after">
+                    <filter string="Date de fermeture prévue" name="deadline_date" date="date_deadline"/>
+                    <filter string="Année en cours" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()).strftime('%%Y-12-31')),('date_deadline','&gt;=',context_today().strftime('%%Y-01-01'))]"/>
+                    <filter string="Mois en cours" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),('date_deadline','&gt;=',context_today().strftime('%%Y-%%m-01'))]"/>
+                    <filter string="Mois suivant" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()+relativedelta(months=2)).strftime('%%Y-%%m-01')),('date_deadline','&gt;=',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01'))]"/>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='lost']" position="after">
+                    <xpath expr="//search/filter[@name='inactive']" position="move" />
+                </xpath>
+
+                <xpath expr="//search/filter[@name='activities_overdue']" position="attributes">
+                    <attribute name="invisible"></attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='activities_today']" position="attributes">
+                    <attribute name="invisible"></attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='activities_upcoming_all']" position="attributes">
+                    <attribute name="invisible"></attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='activities_upcoming_all']" position="after">
+                    <xpath expr="//search/filter[@name='unassigned']" position="move" />
+                </xpath>
+
+                <xpath expr="//search/filter[@name='activities_upcoming_all']" position="after">
+                    <separator/>
+                    <filter string="Régions" name="inactive" domain="[('team_id','ilike','REGIONS')]"/>
+                    <filter string="Ile-de-France" name="inactive" domain="[('team_id','ilike','IDF')]"/>
+                    <separator/>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='unassigned']" position="after">
+                    <filter string="Date de fermeture passées" name="deadline_date" domain="[('date_deadline','&lt;=',context_today().strftime('%%Y-%%m-01')),('probability', '&lt;', 100), ('type', '=', 'opportunity')]"/>
+                    <filter string="Date de fermeture non définie" name="deadline_date" domain="[('date_deadline','=',False)]"/>
+                    <filter string="Activités non définies" name="activities_unset" domain="[('activity_ids','=',False),('probability', '&lt;', 100)]"/>
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='saleschannel']" position="after">
+                    <filter string="Vendeur spécialisé" name="salesspecialist" context="{'group_by':'x_sale_specialist'}"/>
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='city']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='country']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='compaign']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='medium']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/group/filter[@name='source']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//search/filter[@name='overdue_opp']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='lostreason']" position="replace"/>
+
+                <xpath expr="//search/group/filter[@name='month']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='date_conversion']" position="replace" />
+
+                <xpath expr="//search/group/filter[@name='date_closed']" position="replace" />
+
+            </field>
+        </record>
+        <record id="crm_lead_tree_lead_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.tree.lead.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="sample"></attribute>
+                    <attribute name="multi_edit"></attribute>
+                    <attribute name="decoration-bf">message_needaction==True</attribute>
+                    <attribute name="decoration-muted">probability == 100</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='create_date']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='name']" position="attributes">
+                    <attribute name="readonly"></attribute>
+                </xpath>
+                <!-- v13 actualisé pour la v15 -->
+                    <xpath expr="//tree/field[@name='contact_name']" position="before">
+                    <xpath expr="//tree/field[@name='partner_name']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='partner_name']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='email_from']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='phone']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="class"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='city']" position="after">
+                    <field name="zip" optional="show"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='country_id']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='city']" position="after">
+                    <field name="zip" optional="show"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='team_id']" position="after">
+                    <xpath expr="//tree/field[@name='user_id']" position="move" />
+                    <xpath expr="//tree/field[@name='company_id']" position="move" />
+                    <xpath expr="//tree/field[@name='date_deadline']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='user_id']" position="attributes">
+                    <attribute name="string">Sales Person</attribute>
+                    <attribute name="widget"></attribute>
+                    <attribute name="domain"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='date_deadline']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="invisible"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='active']" position="after">
+                    <xpath expr="//tree/field[@name='probability']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='probability']" position="attributes">
+                    <attribute name="string"></attribute>
+                    <attribute name="optional"></attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='campaign_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='medium_id']" position="attributes">
+                    <attribute name="optional"></attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='source_id']" position="replace"/>
+
+                <xpath expr="//tree/field[@name='tag_ids']" position="attributes">
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='priority']" position="after">
+                    <field name="activity_exception_decoration" widget="activity_exception"/>
+                    <field name="type" optional="hide"/>
+                    <field name="stage_id" optional="hide"/>
+                    <field name="activity_summary" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_lead_tree_opportunity_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.tree.opportunity.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+                <!-- v15 -->
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="sample"></attribute>
+                    <attribute name="multi_edit"></attribute>
+                    <attribute name="decoration-bf">message_needaction==True</attribute>
+                    <attribute name="decoration-muted">probability == 100</attribute>
+                    <attribute name="decoration-danger">activity_date_deadline and (activity_date_deadline &lt; current_date)</attribute>
+                </xpath>
+                <!--<xpath expr="//tree/header" position="replace"/>-->
+
+                <xpath expr="//tree/field[@name='date_deadline']" position="attributes">
+                    <attribute name="invisible"></attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='name']" position="attributes">
+                    <attribute name="readonly"></attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='partner_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                    <attribute name="string">Customer</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='contact_name']" position="replace"/>
+
+                <xpath expr="//tree/field[@name='email_from']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='phone']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="class"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='country_id']" position="after">
+                    <field name="activity_date_deadline" optional="show"/>
+                    <field name="activity_summary" optional="show" readonly="1"/>
+                    <xpath expr="//tree/field[@name='medium_id']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='activity_ids']" position="replace"/>
+                <xpath expr="//tree/field[@name='activity_user_id']" position="replace"/>
+                <xpath expr="//tree/field[@name='my_activity_date_deadline']" position="replace"/>
+                <xpath expr="//tree/field[@name='activity_calendar_event_id']" position="replace"/>
+
+                <xpath expr="//tree/field[@name='campaign_id']" position="attributes">
+                    <attribute name="optional"></attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='medium_id']" position="attributes">
+                    <attribute name="optional"></attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='source_id']" position="attributes">
+                    <attribute name="optional"></attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='source_id']" position="after">
+                    <xpath expr="//tree/field[@name='stage_id']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='stage_id']" position="attributes">
+                    <attribute name="decoration-bf"></attribute>
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='expected_revenue']" position="attributes">
+                    <attribute name="widget"></attribute>
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='company_currency']" position="replace"/>
+                <xpath expr="//tree/field[@name='recurring_revenue_monthly']" position="replace"/>
+                <xpath expr="//tree/field[@name='recurring_revenue']" position="replace"/>
+                <xpath expr="//tree/field[@name='recurring_plan']" position="replace"/>
+                <xpath expr="//tree/field[@name='active']" position="replace"/>
+
+                <xpath expr="//tree/field[@name='probability']" position="attributes">
+                    <attribute name="string"></attribute>
+                    <attribute name="avg">Avg. of Probability</attribute>
+                    <attribute name="optional">show</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='probability']" position="after">
+                    <xpath expr="//tree/field[@name='user_id']" position="move" />
+                    <xpath expr="//tree/field[@name='team_id']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='user_id']" position="attributes">
+                    <attribute name="widget"></attribute>
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="domain"></attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='team_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+
+
+                <xpath expr="//tree/field[@name='message_needaction']" position="after">
+                    <field name="probability" invisible="1"/>
+                    <field name="write_date" invisible="1"/>
+                    <xpath expr="//tree/field[@name='company_id']" position="move" />
+                    <xpath expr="//tree/field[@name='tag_ids']" position="move" />
+                    <xpath expr="//tree/field[@name='priority']" position="move" />
+                    <field name="activity_exception_decoration" widget="activity_exception"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='tag_ids']" position="attributes">
+                    <attribute name="options"></attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='priority']" position="attributes">
+                    <attribute name="widget"></attribute>
+                </xpath>
+
+                <!--<xpath expr="//tree/button[3]" position="replace"/>-->
+                <xpath expr="//tree/button[@name='action_reschedule_meeting']" position="replace"/>
+                <xpath expr="//tree/button[@name='action_snooze']" position="replace"/>
+
+                <!-- v13 actualisé pour la v15-->
+                <xpath expr="//tree/field[@name='create_date']" position="attributes">
+                    <attribute name="widget">date</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='partner_id']" position="after">
+                    <xpath expr="//tree/field[@name='name']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="prorated_revenue" sum="Expected Revenues" optional="hide"/>
+                    <field name="x_margin" sum="Marge estimées" optional="show"/>
+                    <field name="x_achats_UGAP" sum="Achats UGAP $" optional="hide"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='email_from']" position="before">
+                    <xpath expr="//tree/field[@name='stage_id']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='city']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='state_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='country_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <xpath expr="//tree/field[@name='expected_revenue']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='expected_revenue']" position="attributes">
+                    <attribute name="sum">Planned Revenues</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='team_id']" position="after">
+                    <field name="x_sale_specialist" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_lead_activity_personnalisation_view" model="ir.ui.view">
+            <field name="name">crm.lead.view.activity.personnalisation</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_activity"/>
+            <field name="arch" type="xml">
+                <xpath expr="//activity/templates/div[1]/div[1]/field[@name='name']" position="before">
+                    <div style="font-weight: bold">
+                        <field name="partner_name"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
