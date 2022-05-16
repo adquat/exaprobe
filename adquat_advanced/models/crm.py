@@ -171,19 +171,37 @@ class CrmLead(models.Model):
     x_tdp_version_tdp = fields.Char('Version de TDP', copy=False)
 
     #FIELDS COMPUTED
-    x_margin_rate = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate_new', store=True, tracking=102)
-    x_margin = fields.Monetary(string='Marge', compute='_compute_x_margin_new', store=True, tracking=102)
+    x_margin_rate = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True, tracking=101)
+    x_margin = fields.Monetary(string='Marge', compute='_compute_x_margin_new', store=True, tracking=101)
 
     #FIELDS FUNTIONS
     #CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
-    @api.depends('expected_revenue', 'x_margin')
-    def _compute_x_margin_rate_new(self):
+    @api.depends('expected_revenue', 'x_margin_rate')
+    def _compute_x_margin(self):
         for record in self:
             if record.x_margin_rate != 0:
                 record.x_margin = record.expected_revenue * record.x_margin_rate / 100
 
-    @api.depends('expected_revenue', 'x_margin_rate')
-    def _compute_x_margin_new(self):
+    @api.depends('expected_revenue', 'x_margin')
+    def _compute_x_margin_rate(self):
         for record in self:
             if record.expected_revenue != 0:
                 record.x_margin_rate = record.x_margin / record.expected_revenue * 100
+
+    # x_margin_rate2 = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True,
+    #                               tracking=103)
+    # x_margin2 = fields.Monetary(string='Marge', compute='_compute_x_margin', store=True, tracking=103)
+    #
+    # # FIELDS FUNTIONS
+    # # CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
+    # @api.depends('expected_revenue', 'x_margin_rate2')
+    # def _compute_x_margin(self):
+    #     for record in self:
+    #         if record.x_margin_rate2 != 0:
+    #             record.x_margin2 = record.expected_revenue * record.x_margin_rate2 / 100
+    #
+    # @api.depends('expected_revenue', 'x_margin2')
+    # def _compute_x_margin_rate(self):
+    #     for record in self:
+    #         if record.expected_revenue != 0:
+    #             record.x_margin_rate2 = record.x_margin2 / record.expected_revenue * 100
