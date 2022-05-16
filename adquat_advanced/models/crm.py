@@ -171,8 +171,8 @@ class CrmLead(models.Model):
     x_tdp_version_tdp = fields.Char('Version de TDP', copy=False)
 
     #FIELDS COMPUTED
-    x_margin_rate = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate_new', store=True, tracking=100)
-    x_margin = fields.Monetary(string='Marge', compute='_compute_x_margin_new', store=True, tracking=100)
+    x_margin_rate = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate_new', store=True, tracking=102)
+    x_margin = fields.Monetary(string='Marge', compute='_compute_x_margin_new', store=True, tracking=102)
 
     #FIELDS FUNTIONS
     #CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
