@@ -152,7 +152,6 @@ class CrmLead(models.Model):
     x_adv_tache_wrike = fields.Char('Nom de la tâche Wrike', copy=False)
     x_adv_verif = fields.Char('Vérification de la commande')
     x_cisco_smartaccount = fields.Char('Cisco Smart Account')
-    x_numero_client = fields.Char('Numéro de client', readonly=True, copy=False)
     x_numero_opportunite = fields.Char("Numéro d'opportunité", index=True, copy=False)
     x_partner_address_email = fields.Char('Courriel de contact du partenaire', readonly=True, copy=False)
     x_renew_caff = fields.Char('Courriel de contact du partenaire')
@@ -173,8 +172,9 @@ class CrmLead(models.Model):
     #FIELDS COMPUTED
     x_margin_rate = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True, tracking=101)
     x_margin = fields.Monetary(string='Marge', compute='_compute_x_margin_new', store=True, tracking=101)
+    x_numero_client = fields.Char('Numéro de client', compute='_compute_x_numero_client', store=True)
 
-    #FIELDS FUNTIONS
+    #FIELDS FUNCTIONS
     #CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
     @api.depends('expected_revenue', 'x_margin_rate')
     def _compute_x_margin(self):
@@ -188,20 +188,27 @@ class CrmLead(models.Model):
             if record.expected_revenue != 0:
                 record.x_margin_rate = record.x_margin / record.expected_revenue * 100
 
-    x_margin_rate2 = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True,
-                                  tracking=103)
-    x_margin2 = fields.Monetary(string='Marge', compute='_compute_x_margin', store=True, tracking=103)
-
-    # FIELDS FUNTIONS
-    # CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
-    @api.depends('expected_revenue', 'x_margin_rate2')
-    def _compute_x_margin(self):
+    @api.depends('partner_id.parent_id.x_numero_client', 'partner_id.x_numero_client', 'partner_id.is_company')
+    def _compute_x_numero_client(self):
         for record in self:
-            if record.x_margin_rate2 != 0:
-                record.x_margin2 = record.expected_revenue * record.x_margin_rate2 / 100
+            record.x_numero_client = not record.partner_id.is_company and record.partner_id.parent_id.x_numero_client \
+                                     or record.partner_id.x_numero_client
 
-    @api.depends('expected_revenue', 'x_margin2')
-    def _compute_x_margin_rate(self):
-        for record in self:
-            if record.expected_revenue != 0:
-                record.x_margin_rate2 = record.x_margin2 / record.expected_revenue * 100
+    #SOLUTION 2 PROBLEME MIGRATION CHAMPS X_MARGIN/X_MARGIN_RATE
+    # x_margin_rate2 = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True,
+    #                               tracking=103)
+    # x_margin2 = fields.Monetary(string='Marge', compute='_compute_x_margin', store=True, tracking=103)
+    #
+    # # FIELDS FUNCTIONS
+    # # CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
+    # @api.depends('expected_revenue', 'x_margin_rate2')
+    # def _compute_x_margin2(self):
+    #     for record in self:
+    #         if record.x_margin_rate2 != 0:
+    #             record.x_margin2 = record.expected_revenue * record.x_margin_rate2 / 100
+    #
+    # @api.depends('expected_revenue', 'x_margin2')
+    # def _compute_x_margin_rate2(self):
+    #     for record in self:
+    #         if record.expected_revenue != 0:
+    #             record.x_margin_rate2 = record.x_margin2 / record.expected_revenue * 100
