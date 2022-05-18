@@ -24,6 +24,11 @@
         'views/partner_view.xml',
         'views/user_view.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'adquat_advanced/static/src/scss/disable_discussion.scss'
+        ],
+    },
     'test':[],
     'installable': True,
     'images': [],
