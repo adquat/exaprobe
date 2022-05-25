@@ -132,6 +132,18 @@
                 <xpath expr="//form/sheet/group/group[1]/span" position="replace"/>-->
 
                 <!--Impossible de remettre comme v13 donc modification de v15 pour avoir la meme chose-->
+                <xpath expr="//form/sheet/div[2]/h1[1]" position="replace">
+                    <h1>
+                        <field id="company" class="o_text_overflow" name="name" default_focus="1" placeholder="e.g. Lumber Inc"
+                               attrs="{'required' : [('type', '=', 'contact'),('is_company', '=', True)],
+                               'invisible': [('is_company','=', False)],
+                               'readonly': [('x_locked','!=', False)]}"/>
+                        <field id="individual" class="o_text_overflow" name="name" default_focus="1" placeholder="e.g. Brandom Freeman"
+                               attrs="{'required' : [('type', '=', 'contact'), ('is_company', '=', False)],
+                               'invisible': [('is_company','=', True)],
+                               'readonly': [('x_locked','!=', False)]}"/>
+                    </h1>
+                </xpath>
                 <xpath expr="//form/sheet/group/group[1]/span/b" position="replace"/>
 
                 <xpath expr="//form/sheet/group/group[1]/span/field[@name='type']" position="before">
@@ -268,20 +280,5 @@
                 </xpath>
             </field>
         </record>
-
-<!--        <record id="res_partner_select_personnalisation_view" model="ir.ui.view">-->
-<!--            <field name="name">res.partner.select.personnalisation</field>-->
-<!--            <field name="model">res.partner</field>-->
-<!--            <field name="inherit_id" ref="base.view_res_partner_filter"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--            </field>-->
-<!--        </record>-->
-<!--        <record id="res_partner_select_personnalisation_view" model="ir.ui.view">-->
-<!--            <field name="name">res.partner.select.personnalisation</field>-->
-<!--            <field name="model">res.partner</field>-->
-<!--            <field name="inherit_id" ref="base.view_res_partner_filter"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--            </field>-->
-<!--        </record>-->
     </data>
 </odoo>

@@ -576,18 +576,21 @@
             <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
             <field name="arch" type="xml">
                 <!-- v15 -->
-                <xpath expr="//kanban/field[@name='probability']" position="replace"/>
+                <xpath expr="//kanban/field[@name='probability']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
 
                 <xpath expr="//kanban/field[@name='user_id']" position="after">
                     <field name="x_partner_address_email"/>
                     <field name="message_needaction_counter"/>
                 </xpath>
-
-                <xpath expr="//kanban/templates/t/t" position="replace"/>
-
-                <xpath expr="//kanban/templates/t/div" position="attributes">
-                    <attribute name="t-attf-class">#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click</attribute>
+                <xpath expr="//kanban/templates/t/t" position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
+                <!-- ADQUAT A VERIFIER SI COMPORTEMENT OK -->
+<!--                <xpath expr="//kanban/templates/t/div" position="attributes">-->
+<!--                    <attribute name="t-attf-class">#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click</attribute>-->
+<!--                </xpath>-->
 
                 <xpath expr="//kanban/templates/t/div/div[3]/div[4]" position="after">
                     <div class="text-muted o_kanban_record_subtitle">
@@ -609,8 +612,9 @@
                         </span>
                     </t>
                 </xpath>
-                <xpath expr="//kanban/templates/t/div/div[1]" position="replace"/>
-
+                <xpath expr="//kanban/templates/t/div/div[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
                 <!-- v13 actualisé pour la v15-->
                 <xpath expr="//kanban[1]/field[@name='activity_ids']" position="after">
                     <field name="date_deadline"/>
@@ -749,7 +753,7 @@
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
-                <xpath expr="//search/filter[@name='close_date']" position="after">
+                <xpath expr="//search/filter[@name='close_date']" position="after">M
                     <filter string="Date de fermeture prévue" name="deadline_date" date="date_deadline"/>
                     <filter string="Année en cours" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()).strftime('%%Y-12-31')),('date_deadline','&gt;=',context_today().strftime('%%Y-01-01'))]"/>
                     <filter string="Mois en cours" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),('date_deadline','&gt;=',context_today().strftime('%%Y-%%m-01'))]"/>
@@ -817,8 +821,9 @@
 
                 <xpath expr="//search/group/filter[@name='lostreason']" position="replace"/>
 
-                <xpath expr="//search/group/filter[@name='month']" position="replace" />
-
+                <xpath expr="//search/group/filter[@name='month']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
                 <xpath expr="//search/group/filter[@name='date_conversion']" position="replace" />
 
                 <xpath expr="//search/group/filter[@name='date_closed']" position="replace" />
@@ -1112,7 +1117,7 @@
             <field name="name">Contacts</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.partner</field>
-            <field name="view_mode">kanban,form,activity</field>
+            <field name="view_mode">kanban,form,tree,activity</field>
             <field name="search_view_id" ref="base.view_res_partner_filter"/>
             <field name="context">{'default_is_company': True , 'search_default_assigned_to_me': True, 'search_default_type_company': True}</field>
             <field name="help" type="html">
@@ -1123,5 +1128,38 @@
               </p>
             </field>
         </record>
+
+        <!-- MENU MARKETING -->
+
+    <menuitem id="menu_utm_campaign_act_exaprobe"
+        action="utm.utm_campaign_action"
+        sequence="30"
+        name="Marketing"/>
     </data>
+
+    <record id="utm.utm_campaign_action" model="ir.actions.act_window">
+        <field name="name">Campaigns</field>
+        <field name="res_model">utm.campaign</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a campaign
+            </p>
+            <p>
+                Campaigns are used to centralize your marketing efforts and track their results.
+            </p>
+        </field>
+    </record>
+
+<!--    <record model="ir.actions.act_window" id="crm.crm_lead_action_pipeline">-->
+<!--        <field name="name">Pipeline</field>-->
+<!--        <field name="res_model">crm.lead</field>-->
+<!--        <field name="view_mode">kanban,tree,graph,pivot,form,calendar,activity</field>-->
+<!--        <field name="domain">[('type','=','opportunity')]</field>-->
+<!--        <field name="context">{-->
+<!--                'default_type': 'opportunity',-->
+<!--                'search_default_assigned_to_me': 1-->
+<!--        }</field>-->
+<!--        <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter"/>-->
+<!--    </record>-->
 </odoo>
