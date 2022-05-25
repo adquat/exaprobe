@@ -753,7 +753,7 @@
                     <attribute name="invisible">1</attribute>
                 </xpath>
 
-                <xpath expr="//search/filter[@name='close_date']" position="after">M
+                <xpath expr="//search/filter[@name='close_date']" position="after">
                     <filter string="Date de fermeture prévue" name="deadline_date" date="date_deadline"/>
                     <filter string="Année en cours" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()).strftime('%%Y-12-31')),('date_deadline','&gt;=',context_today().strftime('%%Y-01-01'))]"/>
                     <filter string="Mois en cours" name="deadline_date" domain="[('date_deadline','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),('date_deadline','&gt;=',context_today().strftime('%%Y-%%m-01'))]"/>
