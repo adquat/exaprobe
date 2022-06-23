@@ -1,2 +1,5 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-access_stock_change_product_price,stock.change.produc.price,model_stock_change_product_price,base.group_user,1,1,1,1
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_x_fournisseurs,access_x_fournisseurs,model_x_fournisseurs,base.group_user,1,0,0,0
+access_x_fournisseurs_system,access_x_fournisseurs_system,model_x_fournisseurs,base.group_system,1,1,1,1
+access_x_tiers_sage,access_x_tiers_sage,model_x_tiers_sage,base.group_user,1,0,0,0
+access_x_tiers_sage_system,access_x_tiers_sage_system,model_x_tiers_sage,base.group_system,1,1,1,1

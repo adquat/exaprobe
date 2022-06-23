@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_select_personnalisation_view" model="ir.ui.view">
+            <field name="name">res.partner.select.personnalisation</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search[1]/field[@name='user_id']" position="after">
+                    <field name="team_id"/>
+                    <field name="x_sale_specialist"/>
+                    <field name="x_categorie"/>
+                    <field name="x_numero_client"/>
+                    <separator/>
+                    <filter string="Mes contacts" name="assigned_to_me" domain="[('user_id', '=', uid)]" help="Contacts that are assigned to me"/>
+                </xpath>
+
+                <xpath expr="//search[1]/filter[@name='inactive']" position="before">
+                    <filter string="Prospect" name="prospect" domain="[('x_categorie', '=', 'Prospect')]"/>
+                    <filter string="Client" name="client" domain="[('x_categorie', '=', 'Client')]"/>
+                    <filter string="Abandonné" name="abandonné" domain="[('x_categorie', '=', 'Abandonné')]"/>
+                    <filter string="Bloqué" name="bloqué" domain="[('x_categorie', '=', 'Bloqué')]"/>
+                    <separator/>
+                    <filter string="Régions" name="regions" domain="[('team_id','ilike','REGIONS')]"/>
+                    <filter string="Ile-de-France" name="idf" domain="[('team_id','ilike','IDF')]"/>
+                    <separator/>
+                </xpath>
+
+                <xpath expr="//search[1]/group[1]/filter[@name='salesperson']" position="after">
+                    <filter name="Equipe" string="Equipe" domain="[]" context="{'group_by' : 'team_id'}"/>
+                    <filter string="Vendeur spécialisé" name="salesspecialist" context="{'group_by':'x_sale_specialist'}"/>
+                    <filter name="Catégorie du compte" string="Catégorie du compte" domain="[]" context="{'group_by' : 'x_categorie'}"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="res_partner_tree_personnalisation_view" model="ir.ui.view">
+            <field name="name">res.partner.tree.personnalisation</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='display_name']" position="after">
+                    <field name="name" optional="hide"/>
+                    <field name="x_numero_client" optional="hide"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='company_id']" position="after">
+                    <field name="mobile" optional="hide"/>
+                    <field name="street" optional="hide"/>
+                    <field name="street2" optional="hide"/>
+                    <field name="zip" optional="hide"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='company_id']" position="after">
+                    <xpath expr="//tree/field[@name='parent_id']" position="move" />
+                    <xpath expr="//tree/field[@name='function']" position="move" />
+                    <xpath expr="//tree/field[@name='phone']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='parent_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                    <attribute name="invisible"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='phone']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                    <attribute name="class"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='mobile']" position="after">
+                    <xpath expr="//tree/field[@name='email']" position="move" />
+                </xpath>
+
+                <xpath expr="//tree/field[@name='email']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='vat']" position="after">
+                    <field name="x_SIREN" optional="hide"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='user_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                    <attribute name="invisible"></attribute>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='user_id']" position="after">
+                    <field name="team_id" optional="show"/>
+                </xpath>
+
+                <xpath expr="//tree/field[@name='active']" position="after">
+                    <field name="opportunity_count" optional="show"/>
+                    <field name="x_locked" widget="toggle_button" groups="sales_team.group_sale_manager" optional="hide"/>
+                    <field name="x_categorie" optional="hide"/>
+                    <field name="x_priority" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="res_partner_form_personnalisation_view" model="ir.ui.view">
+            <field name="name">res.partner.form.personnalisation</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <!-- v15 -->
+
+                <xpath expr="//form/sheet/field[@name='avatar_128']" position="replace"/>
+
+                <xpath expr="//form/sheet/div[2]/field[@name='country_code']" position="replace"/>
+
+                <xpath expr="//form/sheet/div[2]/field[@name='company_type']" position="attributes">
+                    <attribute name="class">oe_edit_only</attribute>
+                    <attribute name="attrs">{'readonly': [('x_locked','!=', False)]}</attribute>
+                </xpath>
+
+                <!--On ne peut enlever les fields company et individual car présent dans res.partner.form.inherit.partner.autocomplete-->
+                <!--<xpath expr="//form/sheet/div[2]/h1[1]" position="replace"/>
+                <xpath expr="//div[hasclass('oe_title')]/h1/field[@id='individual']" position="after">
+                <field name="name" default_focus="1" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')],'readonly': [('x_locked','!=', False)]}"/>
+                </xpath>-->
+
+                <!--<xpath expr="//form/sheet/group/group[1]/div[@class='o_address_format']" position="before">
+                <xpath expr="//form/sheet/group/group[1]/span/field[@name='type']" position="move" />
+                <label name="address_name">
+                    <b attrs="{'invisible': [('type', '!=', 'contact')]}">Company Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'invoice')]}">Invoice Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'delivery')]}">Delivery Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'other')]}">Other Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'private')]}">Private Address</b>
+                    <b attrs="{'invisible': [('type', '!=', False)]}">Address</b>
+                </label>
+                </xpath>
+                <xpath expr="//form/sheet/group/group[1]/span" position="replace"/>-->
+
+                <!--Impossible de remettre comme v13 donc modification de v15 pour avoir la meme chose-->
+                <xpath expr="//form/sheet/div[2]/h1[1]" position="replace">
+                    <h1>
+                        <field id="company" class="o_text_overflow" name="name" default_focus="1" placeholder="e.g. Lumber Inc"
+                               attrs="{'required' : [('type', '=', 'contact'),('is_company', '=', True)],
+                               'invisible': [('is_company','=', False)],
+                               'readonly': [('x_locked','!=', False)]}"/>
+                        <field id="individual" class="o_text_overflow" name="name" default_focus="1" placeholder="e.g. Brandom Freeman"
+                               attrs="{'required' : [('type', '=', 'contact'), ('is_company', '=', False)],
+                               'invisible': [('is_company','=', True)],
+                               'readonly': [('x_locked','!=', False)]}"/>
+                    </h1>
+                </xpath>
+                <xpath expr="//form/sheet/group/group[1]/span/b" position="replace"/>
+
+                <xpath expr="//form/sheet/group/group[1]/span/field[@name='type']" position="before">
+                    <label for="type"/><br/>
+                </xpath>
+                <xpath expr="//form/sheet/group/group[1]/span/field[@name='type']" position="after">
+                    <b attrs="{'invisible': [('type', '!=', 'contact')]}">Company Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'invoice')]}">Invoice Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'delivery')]}">Delivery Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'other')]}">Other Address</b>
+                    <b attrs="{'invisible': [('type', '!=', 'private')]}">Private Address</b>
+                    <b attrs="{'invisible': [('type', '!=', False)]}">Address</b>
+                </xpath>
+                    <xpath expr="//form/sheet/group/group[1]/div/field[@name='street']" position="before">
+                    <xpath expr="//form/sheet/group/group[1]/span/field[@name='type']" position="move" />
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[1]/div/field[@name='state_id']" position="attributes">
+                    <attribute name="options">{"no_open": True}</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[2]/field[@name='website']" position="attributes">
+                    <attribute name="string"></attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/kanban/field[@name='avatar_128']" position="replace"/>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/kanban/templates/t/div/div[1]/img" position="attributes">
+                    <attribute name="t-if">record.image_128.raw_value</attribute>
+                    <attribute name="t-att-src">kanban_image('res.partner', 'avatar_128', record.id.raw_value)</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/kanban/templates/t/div/div[1]/img" position="after">
+                    <t t-if="!record.image_128.raw_value">
+                        <img alt="Delivery" t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/img/truck.png"'/>
+                        <img alt="Invoice" t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/img/money.png"'/>
+                        <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
+                            <img alt="Logo" t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/img/company_image.png"'/>
+                            <img alt="Avatar" t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/img/avatar_grey.png"'/>
+                        </t>
+                    </t>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/form/sheet/group/group/field[@name='title']" position="attributes">
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/form/sheet/group[1]/group[1]/div/div/field[@name='state_id']" position="attributes">
+                    <attribute name="options">{"no_open": True}</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/form/sheet/group[1]/group[1]/div" position="after">
+                    <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/form/sheet/group[2]/field[@name='comment']" position="move" />
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='contact_addresses']/field/form/sheet/group[2]" position="replace"/>
+
+                <xpath expr="//form/sheet/notebook/page[@name='internal_notes']/field[@name='comment']" position="attributes">
+                    <attribute name="options"></attribute>
+                </xpath>
+
+                <!-- v13 -->
+                <xpath expr="//form/div[1]" position="before">
+                    <header>
+                    <button name="202" type="action" string="Convertir le prospect en client (VERROUILLE LE COMPTE)" class="btn-primary" attrs="{'invisible': ['|', ('x_categorie','!=', 'Prospect'),('is_company', '!=', True)]}"/>
+                    </header>
+                </xpath>
+
+                <xpath expr="//form/sheet/div[2]/field[@name='commercial_partner_id']" position="attributes">
+                    <attribute name="placeholder">Sociéte de rattachement ou holding</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/div[2]/div/field[@name='parent_id']" position="attributes">
+                    <attribute name="placeholder"></attribute>
+                    <attribute name="attrs">{'readonly': [('x_locked','!=', False)]}</attribute>
+                </xpath>
+
+                <!--On ajoute le span comparé a avant-->
+                <xpath expr="//form/sheet/group/group[1]/div/field[@name='type']" position="attributes">
+                    <attribute name="attrs"></attribute>
+                    <attribute name="class"></attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[1]/field[@name='vat']" position="attributes">
+                    <attribute name="attrs"></attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[1]/field[@name='vat']" position="after">
+                    <field name="x_SIREN"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[2]/field[@name='category_id']" position="after">
+                    <field name="x_numero_client" attrs="{'readonly': 1}"/>
+                    <field name="x_cisco_smartaccount"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[2]" position="after">
+                    <group string="Sales" name="sale" priority="1">
+                        <field name="user_id" attrs="{'readonly': [('x_locked','!=', False)]}"/>
+                        <field name="team_id" attrs="{'readonly': [('x_locked','!=', False)]}"/>
+                        <field name="x_sale_specialist"/>
+                        <field name="x_categorie" string="Catégorie" widget="selection" attrs="{'invisible': [('is_company','!=', True)],'readonly': [('x_locked','!=', False)]}"/>
+                        <field name="x_priority" widget="priority"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='sales_purchases']" position="replace" />
+
+                <xpath expr="//form/sheet/notebook/page[@name='internal_notes']" position="after">
+                    <page name="sage" string="SAGE" attrs="{'invisible': [('is_company', '!=', True)]}" groups="sales_team.group_sale_manager">
+                        <group name="sage">
+                            <field name="x_tiers_sage">
+                                <tree string="Tiers Sage">
+                                    <field name="x_CT_Num"/>
+                                    <field name="x_CT_Intitule"/>
+                                    <field name="x_CT_Siret"/>
+                                    <field name="x_CT_Identifiant"/>
+                                    <field name="x_CT_Ville"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page name="Admin" string="Management Commercial" groups="sales_team.group_sale_manager">
+                        <group name="Admin">
+                            <field name="x_locked" widget="toggle_button"/>
+                            <field name="name"/>
+                            <field name="parent_id" widget="res_partner_many2one" placeholder="Company" domain="[('is_company', '=', True)]" context="{'default_is_company': True, 'show_vat': True}"/>
+                            <field name="x_categorie" attrs="{'invisible': [('is_company', '!=', True)]}"/>
+                            <field name="user_id" attrs="{}"/>
+                            <field name="team_id"/>
+                            <field name="x_numero_client" attrs="{'invisible': [('is_company', '!=', True)]}"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

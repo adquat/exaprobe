@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_users_form_personnalisation_view" model="ir.ui.view">
+            <field name="name">res.users.form.personalisation</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                    <page string="Exaprobe" name="exaprobe">
+                      <group name="exa1">
+                          <field name="x_trigramme"/>
+                          <field name="x_nom_sage"/>
+                      </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!-- SUPPRESSION MENUS MESSAGES/CALENDRIER -->
+        <record id="group_show_msg_calendar" model="res.groups">
+            <field name="name">EXAPROBE / Voir Messages - Calendrier</field>
+        </record>
+        <record id="mail.menu_root_discuss" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('group_show_msg_calendar')])]"/>
+        </record>
+        <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('group_show_msg_calendar')])]"/>
+        </record>
+    </data>
+</odoo>

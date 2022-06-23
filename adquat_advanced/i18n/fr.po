@@ -1,0 +1,1309 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* adquat_advanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-14 12:56+0000\n"
+"PO-Revision-Date: 2022-06-14 12:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "1-Préremplir à partir du TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "2-Vérifier"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "3-Envoyer la commande"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid ""
+"<b attrs=\"{'invisible': [('type', '!=', 'contact')]}\">Company Address</b>\n"
+"                    <b attrs=\"{'invisible': [('type', '!=', 'invoice')]}\">Invoice Address</b>\n"
+"                    <b attrs=\"{'invisible': [('type', '!=', 'delivery')]}\">Delivery Address</b>\n"
+"                    <b attrs=\"{'invisible': [('type', '!=', 'other')]}\">Other Address</b>\n"
+"                    <b attrs=\"{'invisible': [('type', '!=', 'private')]}\">Private Address</b>\n"
+"                    <b attrs=\"{'invisible': [('type', '!=', False)]}\">Address</b>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid ""
+"<i class=\"fa fa-ban\" style=\"color: red;\" role=\"img\" title=\"This email"
+" is blacklisted for mass mailing\" aria-label=\"Blacklisted\" "
+"attrs=\"{'invisible': ['|', ('is_blacklisted', '=', False), "
+"('partner_address_email', '!=', False)]}\" groups=\"base.group_user\"/>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid ""
+"<i class=\"fa fa-ban\" style=\"color: red;\" role=\"img\" title=\"This email"
+" is blacklisted for mass mailing\" aria-label=\"Blacklisted\" "
+"attrs=\"{'invisible': ['|', ('partner_is_blacklisted', '=', False), "
+"('partner_address_email', '=', False)]}\" groups=\"base.group_user\"/>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid ""
+"<i class=\"fa fa-ban\" style=\"color: red;\" role=\"img\" title=\"This email"
+" is blacklisted for mass mailing\" aria-label=\"Blacklisted\" "
+"attrs=\"{'invisible': [('is_blacklisted', '=', False)]}\" "
+"groups=\"base.group_user\"/>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_kanban_personnalisation_view
+msgid "<i class=\"fa fa-comments\" aria-label=\"Unread messages\" role=\"img\"/>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "<span class=\"oe_grey p-2\"> at </span>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid ""
+"<strong>ERREUR</strong><br/>\n"
+"                            Une erreur est survenue lors de la transmission."
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid ""
+"<strong>TDP absent</strong><br/>\n"
+"                            Fournir le TDP correspondant à l'opportunité.<br/><br/>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "<strong>Vérification de la commande</strong><br/>"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_categorie__abandonné
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Abandonné"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_achats
+msgid "Achats"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_achats_UGAP
+msgid "Achats Cisco $ (hors maintenance)"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_opportunity_personnalisation_view
+msgid "Achats UGAP $"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Activités non définies"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Actualiser"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Actualité avant-vente"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Année en cours"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_categorie__autre
+msgid "Autre"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fichier1_file
+msgid "Autre fichier"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fichier2_file
+msgid "Autre fichier 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fichier3_file
+msgid "Autre fichier 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Avatar"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_opportunity_personnalisation_view
+msgid "Avg. of Probability"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_bu
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_bu
+msgid "BU"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_BDJ
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_BDJ
+msgid "Banque de jours"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_categorie__bloqué
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Bloqué"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_ca
+msgid "CA"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_ca_servinteg
+msgid "CA service integration HT"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_ca_servinteg
+msgid "CA services intégration"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_caff_lie
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_caff_lie
+msgid "Caff lié"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_categorie
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_categorie
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Catégorie"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Catégorie du compte"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid ""
+"Cette action va transformer l'opportunité en commande et la transmettre au "
+"service ADV pour traitement.                                 Etes-vous sûr "
+"de vouloir continuer ?"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_cdp
+msgid "Chef de projet"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_cisco_smartaccount
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_cisco_smartaccount
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_cisco_smartaccount
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_cisco_smartaccount
+msgid "Cisco Smart Account"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_categorie__client
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Client final"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_code_affaire
+msgid "Code affaire"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_code_affaire_2
+msgid "Code affaire 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Code affaire renouvelé"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Commande"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Commande anticipée"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commande_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Commande client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commande2_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Commande client 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commande3_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Commande client 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commentaire_adv
+msgid "Commentaire ADV"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_ic
+msgid "Commercial"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_ic2
+msgid "Commercial 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Company"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model,name:adquat_advanced.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Contacts that are assigned to me"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Convertir le prospect en client (VERROUILLE LE COMPTE)"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_partner_address_email
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_renew_caff
+msgid "Courriel de contact du partenaire"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_ca_renew
+msgid "Coûts récurrents"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Création nouveau fournisseur"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Créer le renouvellement à venir"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_opportunity_personnalisation_view
+msgid "Customer"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_date_demarrage
+msgid "Date butoir de livraison"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_import_date
+msgid "Date d'import du TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_pack_exa_date
+msgid "Date de démarrage du Pack Exa"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Date de fermeture non définie"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Date de fermeture passées"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Date de fermeture prévue"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__crm_lead__x_adv_pack_exa_date__date_licence
+msgid "Date de la licence"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_date_validite_conditions
+msgid "Date de validité des conditions"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__crm_lead__x_adv_pack_exa_date__date_p_v_
+msgid "Date du P.V."
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__crm_lead__x_adv_pack_exa_date__date_ferme
+msgid "Date ferme"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Delivery"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Devis achats"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_file2
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Devis achats 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_file3
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Devis achats 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_file4
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Devis achats 4"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_file5
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Devis achats 5"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Documents complémentaires"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Documents obligatoires"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_renew_duree
+msgid "Durée de l'affaire en mois"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_duree
+msgid "Durée en mois"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_derogation_marge
+msgid "Dérogation Marge"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_derogation_anticipation
+msgid "Dérogation anticipation de commande"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_derogation_crea_fournisseur
+msgid "Dérogation création de nouveau fournisseur"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_derogation_politique_achat
+msgid "Dérogation politique achat"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Dérogations"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Détails"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Détails UGAP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:res.groups,name:adquat_advanced.group_show_msg_calendar
+msgid "EXAPROBE / Voir Messages - Calendrier"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_priority__2
+msgid "Elevé"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Email"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,help:adquat_advanced.field_crm_lead__x_sous_traitant_id
+msgid ""
+"En cas de sous-traitance, renseigner le nom de l'entité dont Exaprobe est le"
+" sous-traitant"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_sous_traitant_id
+msgid "En sous-traitance de"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Enrichir l'opportunité à partir du TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Equipe"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_equipe
+msgid "Equipe commerciale"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_etat_commande
+msgid "Etat de la commande"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_users_form_personnalisation_view
+msgid "Exaprobe"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_opportunity_personnalisation_view
+msgid "Expected Revenues"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_priority__0
+msgid "Faible"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fiche_client_file
+msgid "Fiche création client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fiche_nouveau_fournisseur_file
+msgid "Fiche création fournisseur"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fiche_livraison_file
+msgid "Fiche livraison"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Fichier TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Follow-up"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_force_commande
+msgid "Forcer la commande"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_fournisseurs
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Fournisseurs"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__crm_lead__x_adv_bu__gsp
+msgid "Global Service Providers"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_hno
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_hno
+msgid "HNO"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_id_tache_wrike
+msgid "ID de la tâche Wrike"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Ile-de-France"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Information sur la commande transmise"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Informations complémentaires"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Informations extraites du TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Informations obligatoires"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_UGAP_install
+msgid "Installation sur site"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Invoice"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_TAM_SDM
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_TAM_SDM
+msgid "Jours TAM / SDM"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_justificatif_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Justificatif 1"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_justificatif2_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Justificatif 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_justificatif3_file
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Justificatif 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Justification des dérogations"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nouv_client_kbis_file
+msgid "Kbis nouveau client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model,name:adquat_advanced.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_lien_wrike
+msgid "Lien Wrike ADV"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_lien_srv_avv
+msgid "Lien dossier avant-vente"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_lien_srv_avv
+msgid "Lien serveur AVV"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Logo"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Management Commercial"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Manager"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_margin
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_marge
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Marge"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_opportunity_personnalisation_view
+msgid "Marge estimées"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Marge théorique HT"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Mark Lost"
+msgstr "Marqué comme perdu"
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Mark Won"
+msgstr "Marqué comme gagné"
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Mark as Lost"
+msgstr "Marqué comme perdu"
+
+#. module: adquat_advanced
+#: model:ir.ui.menu,name:adquat_advanced.menu_utm_campaign_act_exaprobe
+msgid "Marketing"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Meeting"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Meetings"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Mes contacts"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Mois en cours"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Mois suivant"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,help:adquat_advanced.field_crm_lead__x_achats_UGAP
+msgid "Montant des achats Cisco en $"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_renew_montant
+msgid "Montant du renouvellement"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_marge
+msgid "Montant marge"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_priority__1
+msgid "Moyen"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "New"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nom_client
+msgid "Nom client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_nom_sage
+msgid "Nom dans SAGE"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_nom_client
+msgid "Nom de client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commande_filename
+msgid "Nom de fichier de la commande client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nom
+msgid "Nom de l'ADV"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_tache_wrike
+msgid "Nom de la tâche Wrike"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fichier1_filename
+msgid "Nom du fichier 1"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fichier2_filename
+msgid "Nom du fichier 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fichier3_filename
+msgid "Nom du fichier 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_filename
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Nom du fichier TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commande2_filename
+msgid "Nom du fichier commande client 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_commande3_filename
+msgid "Nom du fichier commande client 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fiche_client_filename
+msgid "Nom du fichier de création client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fiche_livraison_filename
+msgid "Nom du fichier de la fiche livraison"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_filename
+msgid "Nom du fichier devis achats"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_filename2
+msgid "Nom du fichier devis achats 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_filename3
+msgid "Nom du fichier devis achats 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_filename4
+msgid "Nom du fichier devis achats 4"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achat_filename5
+msgid "Nom du fichier devis achats 5"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_fiche_nouveau_fournisseur_filename
+msgid "Nom du fichier fiche création fournisseur"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_justificatif_filename
+msgid "Nom du fichier justificatif 1"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_justificatif2_filename
+msgid "Nom du fichier justificatif 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_justificatif3_filename
+msgid "Nom du fichier justificatif 3"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_offre_commerciale_filename
+msgid "Nom du fichier offre commerciale"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nom_projet
+msgid "Nom du projet"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_nom_projet
+msgid "Nom projet"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nb_jours
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_nb_jours
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_nb_jours
+msgid "Nombre de jours"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nb_jours_CDP
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_nb_jours_CDP
+msgid "Nombre de jours CDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nb_jours_CT
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_nb_jours_CT
+msgid "Nombre de jours CT"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,help:adquat_advanced.field_crm_lead__x_nb_jours
+msgid "Nombre de jours vendus"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Non effectuée."
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_notes
+msgid "Notes"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nouveau_client
+msgid "Nouveau client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nouv_client_kbis_filename
+msgid "Nouveau client Kbis nom de fichier"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nouveau_fournisseur
+msgid "Nouveau fournisseur"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_numero_opportunite
+msgid "Numéro d'opportunité"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_numero_client
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_numero_client
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_numero_client
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_numero_client
+msgid "Numéro de client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_offre_commerciale_file
+msgid "Offre commerciale"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_lead_personnalisation_view
+msgid "Opportunité"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_renew_opp
+msgid "Opportunité du renouvellement à venir"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_renewed_opp
+msgid "Opportunité renouvelée"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Outrepasser les vérifications"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_pack_exa_247
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_pack_exa_247
+msgid "Pack 24/7"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_pack_exa
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_pack_exa
+msgid "Pack Exa"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_pack_exa_date_specifique
+msgid "Pack Exa - Date ferme"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_pack_exa_gtr
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_pack_exa_gtr
+msgid "Pack GTR"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_partenaires
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_partenaires
+msgid "Partenaires"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Phone"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_lead_personnalisation_view
+msgid "Piste"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_lead_personnalisation_view
+msgid "Piste/Opportunité"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_opportunity_personnalisation_view
+msgid "Planned Revenues"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Politique achat"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_priority
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_priority
+msgid "Priorité"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_categorie__prospect
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Prospect"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nouv_client_rib_file
+msgid "RIB nouveau client"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_nouv_client_rib_filename
+msgid "RIB nouveau client nom de fichier"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_reassurance
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_reassurance
+msgid "Reassurance"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_remarques
+msgid "Remarques"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+msgid "Renew"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Renouvellement"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "Renouvellement à venir"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Régions"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__crm_lead__x_adv_bu__ressec
+msgid "Réseau et sécurité"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "SAGE"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_SIREN
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_SIREN
+msgid "SIREN"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Sales"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_tree_lead_personnalisation_view
+msgid "Sales Person"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model,name:adquat_advanced.model_ir_actions_server
+msgid "Server Action"
+msgstr "Action Serveur"
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_servmng
+msgid "Service managés"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_servmng
+msgid "Services managés"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__crm_lead__x_adv_bu__smo
+msgid "Smart office"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Sociéte de rattachement ou holding"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_lead_personnalisation_view
+msgid "Stage"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_status
+msgid "Statut du TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_margin_rate
+msgid "Taux de Marge"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_tiers_sage
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_tiers_sage
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "Tiers Sage"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_ca
+msgid "Total CA HT"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_achats
+msgid "Total achats HT"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_trigramme
+msgid "Trigramme"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_ic_trig
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_ic_trig
+msgid "Trigramme commercial"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_ic2_trig
+msgid "Trigramme commercial 2"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields.selection,name:adquat_advanced.selection__res_partner__x_priority__3
+msgid "Très haut"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_form_personnalisation_view
+msgid "UGAP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_kanban_personnalisation_view
+msgid "Unread Messages"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_urgent
+msgid "Urgent"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model,name:adquat_advanced.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_sale_specialist
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_sale_specialist
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_sale_specialist
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.crm_lead_search_opportunity_personnalisation_view
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_select_personnalisation_view
+msgid "Vendeur spécialisé"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_partner__x_locked
+#: model:ir.model.fields,field_description:adquat_advanced.field_res_users__x_locked
+msgid "Verrouillé"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_version_tdp
+msgid "Version de TDP"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_tdp_version
+msgid "Version de l'offre"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_verif
+msgid "Vérification de la commande"
+msgstr ""
+
+#. module: adquat_advanced
+#: model:ir.model.fields,field_description:adquat_advanced.field_crm_lead__x_adv_verif_details
+msgid "Vérification de la commande - détails"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "e.g. Brandom Freeman"
+msgstr ""
+
+#. module: adquat_advanced
+#: model_terms:ir.ui.view,arch_db:adquat_advanced.res_partner_form_personnalisation_view
+msgid "e.g. Lumber Inc"
+msgstr ""

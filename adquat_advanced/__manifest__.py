@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################################
 #
-#    ADQUAT - AJOUTE UN CHAMP DATE POUR CHOISIR LA DATE A LAQUELLE A ETE REALISE L'INVENTAIRE
+#    ADQUAT
 #
 ############################################################################################
 
@@ -11,17 +11,24 @@
     'version': '0.2',
     'category': 'Tools',
     'description': """
-    Ajouts divers
+    Ajouts vues personnalisées EXAPROBE et divers
 """,
     'author': 'Adquat-solutions',
     'website': 'http://www.adquat.com',
-    'depends': ['base'],
+    'depends': ['base','crm'],
     'data': [],
     'demo': [],
     'update_xml': [
         #'security/ir.model.access.csv',
-        #'models_view.xml',
+        'views/crm_view.xml',
+        'views/partner_view.xml',
+        'views/user_view.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'adquat_advanced/static/src/scss/disable_discussion.scss'
+        ],
+    },
     'test':[],
     'installable': True,
     'images': [],

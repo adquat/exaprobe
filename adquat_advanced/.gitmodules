@@ -1,0 +1,4 @@
+[submodule "module_commun"]
+	path = module_commun
+	url = git@github.com:adquat/module_commun.git
+	branch = 15.0
