@@ -170,45 +170,26 @@ class CrmLead(models.Model):
     x_tdp_version_tdp = fields.Char('Version de TDP', copy=False)
 
     #FIELDS COMPUTED
-    x_margin_rate = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True, tracking=101)
-    x_margin = fields.Monetary(string='Marge', compute='_compute_x_margin_new', store=True, tracking=101)
+    x_margin_rate = fields.Float(string='Taux de Marge', tracking=101)
+    x_margin = fields.Monetary(string='Marge', tracking=101)
     x_numero_client = fields.Char('Numéro de client', compute='_compute_x_numero_client', store=True)
 
     #FIELDS FUNCTIONS
-    #CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
-    @api.depends('expected_revenue', 'x_margin_rate')
-    def _compute_x_margin(self):
-        for record in self:
-            if record.x_margin_rate != 0:
-                record.x_margin = record.expected_revenue * record.x_margin_rate / 100
-
-    @api.depends('expected_revenue', 'x_margin')
-    def _compute_x_margin_rate(self):
-        for record in self:
-            if record.expected_revenue != 0:
-                record.x_margin_rate = record.x_margin / record.expected_revenue * 100
-
     @api.depends('partner_id.parent_id.x_numero_client', 'partner_id.x_numero_client', 'partner_id.is_company')
     def _compute_x_numero_client(self):
         for record in self:
             record.x_numero_client = not record.partner_id.is_company and record.partner_id.parent_id.x_numero_client \
                                      or record.partner_id.x_numero_client
+    #FONCTIONS ONCHANGE
+    @api.onchange('x_margin_rate')
+    def _onchange_x_margin_rate(self):
+        self.x_margin = self.expected_revenue * self.x_margin_rate / 100
 
-    #SOLUTION 2 PROBLEME MIGRATION CHAMPS X_MARGIN/X_MARGIN_RATE
-    # x_margin_rate2 = fields.Float(string='Taux de Marge', compute='_compute_x_margin_rate', store=True,
-    #                               tracking=103)
-    # x_margin2 = fields.Monetary(string='Marge', compute='_compute_x_margin', store=True, tracking=103)
-    #
-    # # FIELDS FUNCTIONS
-    # # CONSEIL : INCOHERENCES ICI, LES 2 CHAMPS CALCULES SE CALCULENT AVEC L'AUTRE. CERTAIN DU COMPORTEMENT SOUHAITE OU REMPLI PAR ACTION ?
-    # @api.depends('expected_revenue', 'x_margin_rate2')
-    # def _compute_x_margin2(self):
-    #     for record in self:
-    #         if record.x_margin_rate2 != 0:
-    #             record.x_margin2 = record.expected_revenue * record.x_margin_rate2 / 100
-    #
-    # @api.depends('expected_revenue', 'x_margin2')
-    # def _compute_x_margin_rate2(self):
-    #     for record in self:
-    #         if record.expected_revenue != 0:
-    #             record.x_margin_rate2 = record.x_margin2 / record.expected_revenue * 100
+    @api.onchange('x_margin')
+    def _onchange_x_margin(self):
+        if self.expected_revenue != 0:
+            self.x_margin_rate = self.x_margin / self.expected_revenue * 100
+
+    @api.onchange('expected_revenue')
+    def _onchange_expected_revenue(self):
+        self.x_margin = self.expected_revenue * self.x_margin_rate / 100
